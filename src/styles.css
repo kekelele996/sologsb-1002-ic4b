@@ -45,6 +45,7 @@ button, input, textarea { font: inherit; }
 .paragraph-card.selected { border-color: #c9ad8b; background: #fffaf2; box-shadow: 0 0 0 3px rgba(169,124,74,.08); }
 .paragraph-card.highlighted { border-left: 3px solid #d3a95d; }
 .paragraph-card.locked { background: #f4f0fa; border-color: #d8ccea; }
+.paragraph-card.pending-review { border-left-color: #e58b28; background: #fffaf0; }
 .paragraph-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; color: #94877d; font-size: 10px; }
 .paragraph-no { color: #7b3f2f; font-family: Georgia, serif; font-size: 12px; font-weight: 700; }
 .paragraph-text { margin: 0; color: #302b27; font-family: Georgia, "Songti SC", serif; font-size: 14px; line-height: 1.95; text-align: justify; }
@@ -66,6 +67,23 @@ button, input, textarea { font: inherit; }
 .comment-card.accepted { border-left: 3px solid #3b8c67; }
 .comment-card.rejected { opacity: .65; border-left: 3px solid #bd5c53; }
 .comment-card.merged { opacity: .65; border-left: 3px solid #6b73b8; }
+.comment-card.withdrawn { opacity: .62; border-left: 3px solid #9a948d; background: #f7f5f2; }
+.comment-card.stale { border-left: 3px solid #e58b28; background: #fffdf8; }
+.comment-version-row { display: flex; align-items: center; gap: 6px; margin-bottom: 7px; }
+.comment-version-row small { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #8b7d70; font-size: 9px; }
+.stale-alert { margin: 7px 0; padding: 7px 8px; font-size: 10px; }
+.stale-alert .ant-alert-message { font-size: 11px; margin-bottom: 2px; }
+.stale-alert .ant-alert-description { font-size: 10px; line-height: 1.45; }
+.status-tags { display: flex; align-items: center; flex-wrap: wrap; gap: 5px; margin-top: 7px; }
+.status-tags small { color: #94877d; }
+.merged-list { display: grid; gap: 9px; }
+.merged-source { padding: 8px; border: 1px solid #e2d9e9; border-radius: 6px; background: #fbf9ff; }
+.merged-source-meta { display: flex; align-items: center; gap: 5px; margin-bottom: 5px; font-size: 10px; }
+.merged-source p { margin: 6px 0 0; color: #4d443f; font-size: 11px; line-height: 1.55; }
+.merged-source .quote-line { margin-bottom: 4px; }
+.comment-card .ant-collapse { margin: 6px -8px 2px; }
+.comment-card .ant-collapse-header { align-items: center !important; color: #5f5a78 !important; font-size: 10px !important; }
+.legacy-notice { padding: 10px 18px 0; }
 .comment-card .ant-card-head { min-height: 37px; padding: 0 10px; }
 .comment-card .ant-card-head-title { font-size: 11px; }
 .comment-card .ant-card-extra small { font-size: 9px; }
