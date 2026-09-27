@@ -1,6 +1,6 @@
 export type Role = 'author' | 'reviewer' | 'editor'
 export type ParagraphStatus = 'open' | 'accepted' | 'locked'
-export type CommentStatus = 'open' | 'accepted' | 'rejected' | 'merged'
+export type CommentStatus = 'open' | 'stale' | 'accepted' | 'rejected' | 'merged' | 'withdrawn'
 export type CommentType = 'comment' | 'suggestion'
 
 export interface Reply {
@@ -21,8 +21,13 @@ export interface Comment {
   body: string
   suggestion?: string
   status: CommentStatus
+  /** 提交（或最近刷新确认）时对应的段落版本号 */
+  paragraphRevision: number
+  /** 提交时的段落原文快照，正文改动后供审稿人对照 */
+  paragraphSnapshot: string
   replies: Reply[]
   createdAt: number
+  refreshedAt?: number
   mergedInto?: string
 }
 
@@ -34,6 +39,8 @@ export interface Paragraph {
   original: string
   status: ParagraphStatus
   highlighted: boolean
+  /** 正文版本号，每次改动 +1 */
+  revision: number
 }
 
 export interface Version {
